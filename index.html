@@ -68,31 +68,48 @@
     list-style: none;
     margin: 40px 0 0;
     padding: 0;
-    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Añade espacio entre las cajas */
   }
-  li { border-bottom: 1px solid var(--rule); }
+  
+  li { 
+    display: block; 
+  }
 
   .item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-    padding: 16px 0;
-    min-height: 56px;
+    padding: 16px 20px; 
+    background-color: #FFFFFF; 
+    border: 1px solid var(--rule); 
+    border-radius: 12px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03); 
     color: inherit;
     text-decoration: none;
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
   }
+  
+  a.item:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08); 
+    border-color: var(--accent); 
+  }
+  
   a.item:hover .t { color: var(--accent); }
+  
   a.item:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
-    border-radius: 2px;
+    border-radius: 12px;
   }
 
   .t { display: block; font-weight: 500; transition: color 150ms ease; }
   .d { display: block; color: var(--muted); font-size: 14.5px; }
 
-  .arrow { flex: none; color: var(--muted); font-size: 15px; }
+  .arrow { flex: none; color: var(--muted); font-size: 15px; transition: color 150ms ease; }
   a.item:hover .arrow { color: var(--accent); }
 
   .pending .t { color: var(--muted); }
@@ -122,9 +139,9 @@
 <body>
 <main>
 
-  <p class="venue">EuroXR 2026 · Poster</p>
+  <p class="venue">EuroXR 2026 - Poster</p>
   <h1>VR headset tracking accuracy and slip for cervical range-of-motion assessment</h1>
-  <p class="affil">ECL · STRAST, Universidad Politécnica de Madrid</p>
+  <p class="affil">ECL - STRAST, Universidad Politécnica de Madrid</p>
 
   <ul>
     <li>
