@@ -3,76 +3,175 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>VR headset tracking &amp; slip </title>
-<meta name="description" content="Resources for the EuroXR 2026 poster on VR headset tracking accuracy and slip for cervical ROM assessment.">
+<meta name="color-scheme" content="light">
+<title>VR headset tracking accuracy and slip · EuroXR 2026</title>
+<meta name="description" content="Supplementary material for the EuroXR 2026 poster on VR headset tracking accuracy and slip for cervical range-of-motion assessment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0f1420;--card:#182033;--card-h:#212c45;--fg:#eef2fa;--mut:#9aa7c0;--acc:#4da3ff;--bd:#2a3654}
-@media (prefers-color-scheme: light){:root{--bg:#f3f6fb;--card:#fff;--card-h:#eaf1fc;--fg:#12192b;--mut:#5a6782;--acc:#1767d1;--bd:#d7dfee}}
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%}
-body{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-padding:max(28px,env(safe-area-inset-top)) 18px max(28px,env(safe-area-inset-bottom))}
-main{max-width:480px;margin:0 auto}
-header{text-align:center;margin-bottom:26px}
-.badge{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);border:1px solid var(--bd);border-radius:99px;padding:4px 12px;margin-bottom:14px}
-h1{font-size:22px;line-height:1.25;margin:0 0 8px}
-p.sub{margin:0;color:var(--mut);font-size:14.5px;line-height:1.5}
-ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
-a.link,.link.off{display:flex;align-items:center;gap:14px;padding:15px 16px;background:var(--card);border:1px solid var(--bd);border-radius:14px;color:inherit;text-decoration:none;transition:.15s}
-a.link:hover,a.link:focus-visible{background:var(--card-h);border-color:var(--acc);transform:translateY(-1px);outline:none}
-.ico{font-size:22px;width:40px;height:40px;display:grid;place-items:center;background:var(--bg);border-radius:10px;flex:none}
-.txt{flex:1;min-width:0}
-.t{font-weight:600;font-size:15.5px}
-.d{color:var(--mut);font-size:13px;margin-top:2px}
-.arrow{color:var(--mut);flex:none}
-.off{opacity:.55}
-.soon{font-size:11px;border:1px solid var(--bd);border-radius:99px;padding:2px 8px;color:var(--mut);flex:none}
-footer{text-align:center;color:var(--mut);font-size:12px;margin-top:26px;line-height:1.6}
+  :root {
+    color-scheme: light;
+    --bg:      #FBFAF7;
+    --fg:      #1C1B19;
+    --muted:   #5E5A53;
+    --rule:    #E3DFD7;
+    --accent:  #8C2F1B;
+    --font: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  main {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 64px 24px 48px;
+  }
+
+  .venue {
+    margin: 0 0 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  h1 {
+    margin: 0 0 12px;
+    font-size: clamp(24px, 5.6vw, 30px);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .affil {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 40px 0 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+  }
+  li { border-bottom: 1px solid var(--rule); }
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    min-height: 56px;
+    color: inherit;
+    text-decoration: none;
+  }
+  a.item:hover .t { color: var(--accent); }
+  a.item:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .t { display: block; font-weight: 500; transition: color 150ms ease; }
+  .d { display: block; color: var(--muted); font-size: 14.5px; }
+
+  .arrow { flex: none; color: var(--muted); font-size: 15px; }
+  a.item:hover .arrow { color: var(--accent); }
+
+  .pending .t { color: var(--muted); }
+  .pending .arrow { font-size: 13px; }
+
+  .contact {
+    margin: 40px 0 0;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .contact a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+  }
+  .contact a:hover { color: var(--accent); text-decoration-color: currentColor; }
+  .contact a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
 </style>
 </head>
 <body>
 <main>
-<header>
-  <span class="badge">EuroXR 2026 · Poster</span>
-  <h1>VR headset tracking accuracy &amp; slip for cervical ROM assessment</h1>
-  <p class="sub">Thanks for stopping by. Everything related to the poster is here.</p>
-</header>
 
-<ul id="links"></ul>
+  <p class="venue">EuroXR 2026 · Poster</p>
+  <h1>VR headset tracking accuracy and slip for cervical range-of-motion assessment</h1>
+  <p class="affil">ECL · STRAST, Universidad Politécnica de Madrid</p>
 
-<footer>
-  <div>ECL · STRAST</div>
-  <div>Contact: <a id="mail" style="color:var(--acc)" href="#"></a></div>
-</footer>
+  <ul>
+    <li>
+      <!-- When the abstract is online, replace this <div> with:
+           <a class="item" href="URL" target="_blank" rel="noopener"> … <span class="arrow" aria-hidden="true">↗</span></a> -->
+      <div class="item pending" aria-disabled="true">
+        <span>
+          <span class="t">Extended abstract</span>
+          <span class="d">Full methods and results</span>
+        </span>
+        <span class="arrow">Soon</span>
+      </div>
+    </li>
+    <li>
+      <a class="item" href="https://github.com/ECL-STRAST/vr-tracking-slip-analysis" target="_blank" rel="noopener">
+        <span>
+          <span class="t">Source code</span>
+          <span class="d">Slip analysis, hand-eye calibration and APE</span>
+        </span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </li>
+    <li>
+      <a class="item" href="https://ecl-strast.github.io" target="_blank" rel="noopener">
+        <span>
+          <span class="t">ECL</span>
+          <span class="d">Our lab</span>
+        </span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </li>
+    <li>
+      <a class="item" href="https://www.upm.es/recursosidi/map/sistemas-de-tiempo-real-y-arquitectura-de-servicios-telematicos/" target="_blank" rel="noopener">
+        <span>
+          <span class="t">STRAST</span>
+          <span class="d">Research group</span>
+        </span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </li>
+  </ul>
+
+  <p class="contact">
+    Questions or data requests:<br>
+    <a href="mailto:t.perezdearenaza@alumnos.upm.es">t.perezdearenaza@alumnos.upm.es</a>
+  </p>
+
 </main>
-
-<script>
-
-const CONTACT_EMAIL = "t.perezdearenaza@alumnos.upm.es";
-
-const LINKS = [
-  { icon:"🏛️", title:"ECL website",            desc:"Our lab",                                         url:"https://ecl-strast.github.io" },
-  { icon:"🔬", title:"STRAST",                 desc:"Research group",                                  url:"https://www.upm.es/recursosidi/map/sistemas-de-tiempo-real-y-arquitectura-de-servicios-telematicos/" },
-  { icon:"💻", title:"Code on GitHub",         desc:"Slip analysis pipeline, hand-eye calibration & APE", url:"https://github.com/ECL-STRAST/vr-tracking-slip-analysis" },
-  { icon:"📑", title:"Extended abstract",       desc:"Full methods and results",                         url:"" },
-  { icon:"✉️", title:"Contact",                desc:"Questions, collaborations, data requests",         url:"mailto:" + "t.perezdearenaza@alumnos.upm.es" }
-];
-
-const ul = document.getElementById("links");
-LINKS.forEach(l => {
-  const li = document.createElement("li");
-  const on = l.url && !l.url.includes("REPLACE");
-  const el = document.createElement(on ? "a" : "div");
-  el.className = "link" + (on ? "" : " off");
-  if (on) { el.href = l.url; if (!l.url.startsWith("mailto:")) { el.target = "_blank"; el.rel = "noopener"; } }
-  el.innerHTML = '<span class="ico">'+l.icon+'</span><span class="txt"><div class="t"></div><div class="d"></div></span>' +
-                 (on ? '<span class="arrow">↗</span>' : '<span class="soon">Soon</span>');
-  el.querySelector(".t").textContent = l.title;
-  el.querySelector(".d").textContent = l.desc;
-  li.appendChild(el); ul.appendChild(li);
-});
-const m = document.getElementById("mail");
-m.textContent = CONTACT_EMAIL; m.href = "mailto:" + CONTACT_EMAIL;
-</script>
 </body>
 </html>
